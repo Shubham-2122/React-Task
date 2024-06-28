@@ -1,0 +1,24 @@
+how to database ?
+-> database work show data how read,store,
+tools:-
+1)moon mongoDB
+2)https://www.eraser.io/
+
+how data save
+	rgister page:- field 1)username 2)mail 3) password
+	--> agger new add karna ho fir se all change ho jata he
+
+1)https://stackblitz.com/ 
+--> install live runing work check code not only backend,front,anything.
+new terminal to this site install :- npm i mongose
+
+models creted and todo in file creted 
+1) user.models.js
+2) todo.models.js
+3) sub_todo.models.js ;- 
+import mogoose from 'mongose';
+
+const userSchema = new mogoose.Schema({});
+
+export const User = mogoose.model('User', userSchema);
+

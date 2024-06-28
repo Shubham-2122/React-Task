@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li a{
+            color: red;
+            text-decoration: none;
+        }
+        ul li{
+            list-style: none;
+            display: inline-block;
+            background-color: lightgreen;
+        }
+        .main{
+            background-image: url("https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=600");
+            height: 300px;
+            width: 50%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            }
+        .p{
+            background-color: lightcoral;
+            /* padding: 20px; */
+            /* padding: 20px 40px; */
+            padding-left: 10px;
+            padding-top: 20px;
+        }
+        .m{
+            /* margin: 20px; */
+            /* margin-left: 20px; */
+            margin: 10px 20px;
+        }
+        section{
+            background-color: lightcoral;
+            display: flex;
+            height: 1000px;
+            border: 2px solid blue;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            border: 2px solid;
+        }
+        /* #box1{
+            position: static;
+            top: 100px;
+            left: 100px;
+        } */
+         /* #box2{
+            body
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+         } */
+          /* #box3{
+            section
+            position: sticky;
+            top: 0;
+          } */
+           /* #box4{
+            prenet
+            position: relative;
+            top: 100px;
+            left: 100px;
+           } */
+            #box5{
+                position: relative;
+            }
+
+           .box1{
+            height: 50px;
+            width: 50px;
+            border: 2px solid green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+           }
+    </style>
+</head>
+
+<body>
+    <!-- <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi earum laudantium iusto quidem asperiores modi
+        fugit nemo aut quibusdam, aspernatur tempora, minus ea sapiente nobis veniam cum sequi, hic est?
+    </div>
+
+    <h1>safsafsaf</h1>
+    <p>asashik</p>
+
+    <ul>
+        <li><a href="">home</a></li>
+        <li><a href="">home</a></li>
+        <li><a href="">home</a></li>
+        <li><a href="">home</a></li>
+    </ul>
+
+    <a href="">safsa</a>
+     <img src="https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""> -->
+    <!-- <div class="main">
+
+    </div>  -->
+
+    <!-- <div class="m p">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus itaque ea praesentium magni, ullam blanditiis, corrupti enim modi odit odio maiores, nostrum provident numquam explicabo harum! Sint laborum architecto eaque!
+    </div>
+    <div class="m p">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus itaque ea praesentium magni, ullam blanditiis, corrupti enim modi odit odio maiores, nostrum provident numquam explicabo harum! Sint laborum architecto eaque!
+    </div> -->
+
+    <!-- <audio src="/Ellie Goulding - Love Me Like You Do (Official Video).mp3" controls></audio> -->
+    <!-- <video src="/Tom .mp4" controls loop autoplay></video> -->
+     <!-- <embed src="/Tom .mp4" width="400px" height="400px" type=""> -->
+
+    
+    <section>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">
+            <div class="box1">
+                5
+            </div>
+        </div>
+        <div class="box">6</div>
+    </section>
+    <section>
+        sec2
+    </section>
+
+</body>
+
+</html>

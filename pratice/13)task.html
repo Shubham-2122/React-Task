@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="number" id="num">
+    <h2 id="result"></h2>
+    <button onclick="addition()">Add</button>
+
+    <script>
+        function addition(){
+            var sum = 0;
+            var n = parseInt(document.getElementById("num").value);
+            for (var i = n; i > 0; i = parseInt(i / 10)) {
+                var digit = i % 10;
+                sum += digit;
+            }
+            document.getElementById("result").innerHTML = sum;
+        }
+    </script>
+</body>
+</html>

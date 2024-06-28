@@ -1,0 +1,99 @@
+01jQuery.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <h1 class="x">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt dolorem impedit dolores. Libero, itaque
+        delectus quos pariatur vero repellendus officia suscipit perspiciatis eligendi dolor sed mollitia quam esse, ex
+        debitis.
+    </h1>
+
+    <button id="btn">Hide</button>
+    <button id="btn1">Show</button>
+    <button id="btn2">Hide/SHOW</button>
+
+
+
+    <!-- jQuery: javascript framework 
+
+    var x = document.getElementByID('idName');
+
+    var x = $('#idname');
+    $('.className')
+    $('TagName')
+
+
+
+    $('selector').method();e
+
+
+-->
+
+    <script>
+
+        //    h1_tag =  document.querySelector('.x');
+        //    btn_tag =  document.getElementById('btn');
+
+        //   h1_tag =  $('h1');
+        //   btn_tag = $('#btn')
+
+        //    console.log( $('#btn'))
+
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("h1").hide(1000)
+            })
+            $("#btn1").click(function(){
+                $("h1").show(1000)
+            })
+            $("#btn2").click(function(){
+                $("h1").toggle(1000)
+            })
+        })
+
+        // $(document).ready(function () {
+
+
+        //     $('#btn').click(function () {
+
+        //         $('h1').hide(1000);
+        //     })
+
+        //     $('#btn1').click(function () {
+
+        //         $('h1').show(2000);
+        //     })
+
+
+        //     $('#btn2').click(function () {
+
+        //         $('h1').toggle();
+        //     })
+
+
+        //     $('h1').click(function () {
+
+        //         $(this).hide();
+        //     })
+
+        // })
+
+    </script>
+
+
+
+
+</body>
+
+</html>

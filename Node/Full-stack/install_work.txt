@@ -1,0 +1,51 @@
+->Frist to Two folder Front-end and back-end
+-> back-end folder in cmd => npm init	
+   => npm i express
+
+
+Front-end :- install
+npm vite install
+npm i axios :- install to fetch api
+
+// fetch nahi hota tab cros origin same ho na chaiye
+// origin alg che aetle changer kar na pade ga
+// code white less karna he :- backend developer karta he
+// ip ,domin solution karo
+
+backend :- install cors 
+cmd :- 
+1) npm i cors :- kar sakte he
+2) whitelisting kar sakte he \
+
+
+now ites solution
+server.js 
+get "/api/jokes" starderd method use 
+
+now front-end work 
+1) proxy use 
+create react banei hoy to package.json "proxy":"http://localhost:3000"
+
+2)vite hoy to vite.config.js file
+code :- 
+export default defineConfig({
+  server:{
+    proxy:{
+      '/api':"http://localhost:3000"
+    }
+  },
+  plugins: [react()],
+})
+
+front-end api call
+
+
+build :- 
+npm run bulid
+dist folder use to backend part 
+serve.js
+app.user(express.static('dist))
+
+if front any chnage now npm run build always use this is a bad habid
+now server restart .
+

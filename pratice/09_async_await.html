@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // normal function
+        // function resolve2secound(){
+        //     return setTimeout(()=>{
+        //         console.log("inside setimeout")
+        //     },2000)
+        // }
+
+        // function asyccall()
+        // {
+        //     console.log("called asyc before")
+        //     resolve2secound()
+        //     console.log("called asyc after")
+        // }
+        // asyccall()
+
+        // secound ex 
+        // normal function
+        // function resolve2secound()
+        // {
+        //     return new Promise(resolve=>{
+        //         setTimeout(() => {
+        //             resolve("resolved")
+        //         }, 2000);
+        //     })
+        // }
+
+        function resolv2sec()
+        {
+            return new Promise(resolve=>{
+                setTimeout(() => {
+                    resolve("resolved")
+                }, 2000);
+            })
+        }
+
+        async function asycall(){
+            console.log("Called asyclled before")
+            const res = await resolv2sec()
+            console.log(res)
+            console.log("Called asyclled after")
+         }
+        // fast:- method fast  await :- wait
+        // async function asyccall(){
+        //     console.log("called asycalled before")
+        //     const result = await resolve2secound()
+        //     console.log(result);
+        //     console.log("called asycall after resolved")
+        // }
+        // asyccall()
+
+
+        // api 
+
+        // function resolveAfter2Seconds() {
+        //     // direct // fast
+        //     fetch("https://jsonplaceholder.typicode.com/users").then((res)=>res.json()).then((response)=>{
+        //         console.log(response);
+        //         return response
+        //     })
+        //     // 2000
+        //     return new Promise(resolve => {
+        //         setTimeout(() => {
+        //             try {
+                        
+        //                 fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json()).then((response) => {
+        //                     // console.log(response);
+        //                     // return response
+        //                     resolve(response);
+        //                 })
+        //             } catch (error) {
+        //                 console.log(error);
+        //             }
+        //         }, 4000);
+        //     });
+        // }
+
+        // async function asyncCall() {
+        //     console.log("called asyncCall before resolved");
+        //     const result = await resolveAfter2Seconds();
+        //     console.log("result :- ",result);
+        //     console.log("called asyncCall after resolved");
+        // }
+        // asyncCall()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #81a4c7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+        }
+
+        form {
+            background-color:rgb(74, 122, 154) ;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: black;
+        }
+
+        input, select, button,option{
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        input:focus, select:focus, button:focus {
+            border-color: #80bdff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #additionalFields {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="bookingForm">
+        <label for="bookingChoice">Choice of booking:</label>
+        <select id="bookingChoice" name="bookingChoice">
+            <option value="fullDay">Full day booking</option>
+            <option value="halfDay">Half day booking</option>
+            <option value="hourly">Hourly booking</option>
+        </select>
+
+        <div id="additionalFields"></div>
+
+        <label for="userName">User name:</label>
+        <input type="text" id="userName" name="userName">
+
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="noOfPerson">No of person:</label>
+        <input type="number" id="noOfPerson" name="noOfPerson">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('bookingChoice').addEventListener('change', function() {
+            const additionalFields = document.getElementById('additionalFields');
+            additionalFields.innerHTML = ''; // Clear previous fields
+
+            const bookingChoice = this.value;
+
+            // Create date field
+            const dateLabel = document.createElement('label');
+            dateLabel.setAttribute('for', 'date');
+            dateLabel.textContent = 'Date:';
+            additionalFields.appendChild(dateLabel);
+
+            const dateInput = document.createElement('input');
+            dateInput.setAttribute('type', 'date');
+            dateInput.setAttribute('id', 'date');
+            dateInput.setAttribute('name', 'date');
+            additionalFields.appendChild(dateInput);
+
+            if (bookingChoice === 'halfDay') {
+                // Create slot field for half day booking
+                const slotLabel = document.createElement('label');
+                slotLabel.setAttribute('for', 'slot');
+                slotLabel.textContent = 'Slot:';
+                additionalFields.appendChild(slotLabel);
+
+                const slotSelect = document.createElement('select');
+                slotSelect.setAttribute('id', 'slot');
+                slotSelect.setAttribute('name', 'slot');
+
+                const breakfastOption = document.createElement('option');
+                breakfastOption.setAttribute('value', 'breakfast');
+                breakfastOption.textContent = 'Breakfast';
+                slotSelect.appendChild(breakfastOption);
+
+                const lunchOption = document.createElement('option');
+                lunchOption.setAttribute('value', 'lunch');
+                lunchOption.textContent = 'Lunch';
+                slotSelect.appendChild(lunchOption);
+
+                const dinnerOption = document.createElement('option');
+                dinnerOption.setAttribute('value', 'dinner');
+                dinnerOption.textContent = 'Dinner';
+                slotSelect.appendChild(dinnerOption);
+
+                additionalFields.appendChild(slotSelect);
+            }
+
+            if (bookingChoice === 'hourly') {
+                // Create time field for hourly booking
+                const timeLabel = document.createElement('label');
+                timeLabel.setAttribute('for', 'time');
+                timeLabel.textContent = 'Time:';
+                additionalFields.appendChild(timeLabel);
+
+                const timeInput = document.createElement('input');
+                timeInput.setAttribute('type', 'time');
+                timeInput.setAttribute('id', 'time');
+                timeInput.setAttribute('name', 'time');
+                additionalFields.appendChild(timeInput);
+            }
+        });
+    </script>
+
+</body>
+</html>

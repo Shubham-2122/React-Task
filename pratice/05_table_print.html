@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="one" border="5" cellpadding="5" cellspacing="5">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>url</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var table = document.getElementById("one")
+        var tbody = document.querySelector("tbody")
+
+        fetch("data.json",{
+            method:"GET"
+        })
+        .then((res)=> res.json())
+        .then((res)=>{
+            html = `<h2>---api data fetch---</h2>`
+            res.forEach(element => {
+                const row =tbody.insertRow()
+                const idcell = row.insertCell(0)
+                const namecell = row.insertCell(1)
+                const coursecell = row.insertCell(2)
+                
+                idcell.textContent = element.id
+                namecell.textContent = element.name
+                coursecell.textContent = element.course
+            });
+        })
+    </script>
+</body>
+</html>

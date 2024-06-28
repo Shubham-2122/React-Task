@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>fetch data by post</h1>
+
+    <table id="users" border="5"></table>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users',{
+            method:"GET"
+        })
+        //json to oject // parse
+        .then(resp => resp.json())
+        .then(json =>{
+            console.log(json)
+
+            let rowinsert = `<tr><th>id</th><th>name</th></tr>`
+
+            json.forEach(user => {
+                // console.log(user)
+                rowinsert += `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.name}</td>
+                    </tr>
+                `
+            });
+            document.getElementById('users').innerHTML = rowinsert
+        })
+
+
+        // post data object to json 
+        //  object to json str
+
+        fetch("https://jsonplaceholder.typicode.com/posts",{
+            method:"POST",
+
+            body:JSON.stringify({
+                title:"Foosd",
+                body:"sain",
+                name:"sujal"
+            }),
+
+            headers:{
+                "content-type":"application/json"
+            }
+            
+        })
+        .then((res)=>{
+            return res.json()
+        }).then((data)=>{
+            console.log(data)
+        })
+        
+
+        // fetch('https://jsonplaceholder.typicode.com/posts',{
+        //     // inserts
+        //     method:"POST",
+
+        //     // add body defult the json
+        //     body: JSON.stringify({
+        //         title:"fooess",
+        //         body:"bars",
+        //         userId : 1
+        //     }),
+
+        //     // adding headers to request
+        //     headers:{
+        //         "content-type":"application/json;charset=UTF-8"
+        //     }
+
+        // })
+        // // json to object
+        // .then(resp =>{return resp.json()
+
+        // })
+        // .then((data)=>{
+        //     console.log(data)
+        // })
+
+    </script> 
+
+</body>
+</html>

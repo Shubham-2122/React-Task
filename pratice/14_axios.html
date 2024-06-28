@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+<body>
+    <table id="table" border="5" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>course</th>
+                <th>city</th>
+                <th>State</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        var table = document.getElementById("table")
+        var tbody = document.querySelector("tbody")
+
+        const Fetch=async()=>{
+            const res = await axios.get(`https://660d95e36ddfa2943b34c530.mockapi.io/data`)
+            
+            console.log(res.data)
+
+            let htmldata = res.data.map((value)=>{
+                return(
+                    `
+                    <tr>
+                        <td>${value.name}</td>
+                        <td>${value.Coruse}</td>
+                        <td>${value.city}</td>
+                        <td>${value.state}</td>
+                        <td>${value.imges}</td>
+
+                    </tr>
+                    `
+                );
+            });
+            tbody.innerHTML = htmldata.join("")    
+        }
+        Fetch()
+
+        // creted
+        var object = {name:"sujal",Course:"Front",city:"Bharuch"}
+        const insrted=async()=>{
+            const res =await axios.post(`https://660d95e36ddfa2943b34c530.mockapi.io/data`,object)
+
+            console.log(res.data)
+        }
+        // insrted()
+
+        // delete 
+
+        const delete1=async()=>{
+            const res = await axios.delete(`https://660d95e36ddfa2943b34c530.mockapi.io/data/15`)
+            console.log(res.data)
+        }
+        // delete1()
+
+        // update code 
+
+        var object1 = {id:"2",name:"axita",Course:"Full-stack",city:"surat"}
+
+        const update=async()=>{
+            const res = await axios.put(`https://660d95e36ddfa2943b34c530.mockapi.io/data/${object1.id}`,object1)
+            console.log(res.data)
+        }
+        update()
+
+    </script>
+</body>
+</html>

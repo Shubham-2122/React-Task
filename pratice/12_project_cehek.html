@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notes counting</title>
+    <style>
+        #total{
+            margin-left: 275px;
+        }
+        body{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-left: 500px;">
+         <!-- <input type="text" value="2000" disabled id="one">  -->
+    <img src="2000note.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="two"> = 
+    <input type="text" id="demo">
+    <br>
+    <br>
+    <br>
+    <img src="1000note.jpg" alt="" height="50px">
+    <!-- <input type="text" value="1000" disabled id="three"> -->
+    X
+    <input type="text" oninput="abc()" id="four"> =
+    <input type="text" id="demo1">
+    <br><br><br>
+    <img src="500note.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="six"> = 
+    <input type="text" id="demo2"> <br><br><br>
+    <img src="200note.jpg" alt="" height="50px"> 
+    X
+    <input type="text" oninput="abc()" id="eight"> = 
+    <input type="text"  id="demo3"> <br><br><br>
+    <img src="100note.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="ten"> =
+    <input type="text" id="demo4"> <br><br><br>
+    <img src="50note.jpg" alt="" height="50px"> 
+    X 
+    <input type="text" oninput="abc()" id="twelve"> = 
+    <input type="text"  id="demo5"> <br><br><br>
+    <img src="20note.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="fourteen"> = 
+    <input type="text" id="demo6"> <br><br><br>
+    <img src="10note.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="sixteen"> = 
+    <input type="text" id="demo7"> <br><br><br>
+    <img src="5note.jpg" alt="" height="50px"> 
+    X
+    <input type="text" oninput="abc()" id="eighteen"> = 
+    <input type="text" id="demo8"> <br><br><br>
+    <img src="2coin.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="twenty"> =
+    <input type="text" id="demo9"> <br><br><br>
+    <img src="1coin.jpg" alt="" height="50px">
+    X
+    <input type="text" oninput="abc()" id="twenty-two"> =
+    <input type="text" id="demo10"> <br><br><br>
+    total of notes :-
+    <input type="text" id="total">
+    </div>
+
+
+    <script>
+        function abc(){
+            // let a = document.getElementById("one").value;
+            let a = 2000;
+            let b = document.getElementById("two").value;
+            // let c = document.getElementById("three").value;
+            let c = 1000;
+            let d = document.getElementById("four").value;
+            let e = 500;
+            let f = document.getElementById("six").value;
+            let g = 200;
+            let h = document.getElementById("eight").value;
+            let i = 100;
+            let j = document.getElementById("ten").value;
+            let k = 50;
+            let l = document.getElementById("twelve").value;
+            let m = 20;
+            let n = document.getElementById("fourteen").value;
+            let o = 10;
+            let p =document.getElementById("sixteen").value;
+            let q = 5;
+            let r = document.getElementById("eighteen").value;
+            let s = 2;
+            let t = document.getElementById("twenty").value;
+            let u = 1;
+            let v =  document.getElementById("twenty-two").value; 
+
+
+            let tot1 = document.getElementById("demo").value = a * b ;
+            let tot2 = document.getElementById("demo1").value = c * d ;
+            let tot3 = document.getElementById("demo2").value = e * f ;
+            let tot4 = document.getElementById("demo3").value = g * h ;
+            let tot5 = document.getElementById("demo4").value = i * j ;
+            let tot6 = document.getElementById("demo5").value = k * l ;
+            let tot7 = document.getElementById("demo6").value = m * n ;
+            let tot8 = document.getElementById("demo7").value = o * p ;
+            let tot9 = document.getElementById("demo8").value = q * r ;
+            let tot10 = document.getElementById("demo9").value = s * t ;
+            let tot11 = document.getElementById("demo10").value = u * v ;
+
+            let total = document.getElementById("total").value = tot1 + tot2 + tot3 + tot4 + tot5 + tot6 + tot7 + tot8 + tot9 + tot10 + tot11;
+
+        }
+    </script>
+</body>
+</html>

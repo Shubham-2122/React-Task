@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- json :-  javascript object notation
+    json :-  store a data and transfer a data 
+    json :- lighweight data  -->
+
+    <!-- let json = `[
+        {
+            "id":"1",
+            "name":"ruchi",
+            "course":"front-end"
+        }
+    ]`
+
+    let object = [
+    {
+        id:"1",
+        "name":"ruchi",
+        "course":"front-end"
+    }
+    ] -->
+
+    <script>
+        let json = `[
+            {
+                "id":"1",
+                "name":"janvi",
+                "course":"Front-end"
+            },
+            {
+                "id":"2",
+                "name":"Hetvi",
+                "course":"Front-end"
+            }
+        ]`
+
+        console.log(json)
+        const object = JSON.parse(json)
+        console.log(object)
+
+        for(let name1 of object)
+        {
+            document.write(`<p>id:-${name1.id},name:-${name1.name},:-course-${name1.course}</p>`)
+        }
+
+        let obj1 = [
+            {
+                id:"1",
+                name:"shubham",
+                course:"full-stack"
+            },
+            {
+                id:"2",
+                name:"shubham2",
+                course:"full-stack2"
+            }
+        ]
+
+        console.log(obj1)
+
+        const jsondata = JSON.stringify(obj1)
+
+        console.log(jsondata)
+    </script>
+</body>
+</html>

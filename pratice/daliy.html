@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+</head>
+<body>
+<h1>Todo List</h1>
+<input type="text" id="todoInput" placeholder="Enter a new todo">
+<button id="addTodoBtn">Add Todo</button>
+<ul id="todoList">
+    <li>Todo 1</li>
+    <li>Todo 2</li>
+    <li>Todo 3</li>
+</ul>
+
+<script>
+// document.addEventListener("DOMContentLoaded", function() {
+    const todoInput = document.getElementById("todoInput");
+    const addTodoBtn = document.getElementById("addTodoBtn");
+    const todoList = document.getElementById("todoList");
+
+    // Function to add a new todo item
+    function addTodo() {
+
+        // Get the value of the input field
+        const newTodoText = todoInput.value.trim();
+        
+        if (newTodoText !== "") {
+
+            // Create a new list item element
+            const newTodoItem = document.createElement("li");
+            newTodoItem.textContent = newTodoText;
+
+            //add new list
+            todoList.appendChild(newTodoItem);
+
+            //adding after remove
+            todoInput.value = "";
+
+            // Store todo data using cookies
+            document.cookie = `todo=${encodeURIComponent(newTodoText)}; path=/`;
+        } else {
+            alert("Please enter a valid todo.");
+        }
+    }
+
+    // Event listener for the add todo button
+    addTodoBtn.addEventListener("click", addTodo);
+// });
+
+</script>
+</body>
+</html>

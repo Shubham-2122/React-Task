@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- fetch() :-  same as well promise  -->
+    <!-- syntax:- 
+    fetch('url',{
+        method:"GET"
+    })
+    .then((res)=>{retrun res.text()})
+    .then((res)=>{
+        console.log(res)
+    }) -->
+    <button onclick="fetchdata()">click</button>
+    <div id="op"></div>
+
+    <script>
+       function fetchdata()
+       {
+        fetch('data.txt',{
+            method:"GET"
+        })
+        .then((res)=>{
+            return res.text()
+        })
+        .then((res)=>{
+            console.log(res)
+            document.getElementById("op").innerHTML = res
+        })
+       }
+    </script>
+</body>
+</html>

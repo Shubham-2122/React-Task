@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function emotion(res)
+        {
+            document.write(res)
+        }
+
+        const emotional = new Promise(function(call,jotimemaleto){
+            if(!call)
+            {
+                call("Thank your for calling")
+            }
+            else
+            {
+                jotimemaleto("chal Bhag")
+            }
+        })
+        console.log(emotional)
+        emotional.then(
+            function(happy){emotion(happy)},
+            function(sad){emotion(sad)}
+        )
+    </script>
+</body>
+</html>

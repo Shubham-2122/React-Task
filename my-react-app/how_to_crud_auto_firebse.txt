@@ -1,0 +1,116 @@
+firebase.js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD5pukFJzm04PPYmFLxHabh-P-y3ceSVH8",
+  authDomain: "crud-f1a91.firebaseapp.com",
+  databaseURL: "https://crud-f1a91-default-rtdb.firebaseio.com",
+  projectId: "crud-f1a91",
+  storageBucket: "crud-f1a91.appspot.com",
+  messagingSenderId: "125875667029",
+  appId: "1:125875667029:web:69e782b3880a1afa8f94dc",
+  measurementId: "G-MT76FSSDXJ"
+};
+
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);\
+
+1) how to connect database in react 
+ check :- 
+    import React from 'react';
+import { getDatabase, ref, set } from 'firebase/database';
+import { app } from './firebase';
+
+
+const db = getDatabase(app);
+
+function Apiload() {
+ 
+    const putData =()=>{
+        set(ref(db ,'users/shubham'),{
+            id:1,
+            name:"shubham jadav",
+            age:22,
+        });
+    };
+
+  return (
+    <div>
+      <h1>firebase react app</h1>
+      <button onClick={putData} className='btn bg-red-400 border-2 border-black'>Put data</button>
+    </div>
+  )
+}
+
+export default Apiload ; 
+
+2) how to Database in Authentication
+import React from 'react'
+import { app } from './firebase';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+
+
+const auth = getAuth(app);
+--> first to introduce
+
+function ApiAutication() {
+
+    const signupUser = () => {
+        createUserWithEmailAndPassword(
+            auth, 'sujaljadav12@gmail.com', "sujal123"
+        ).then((value)=>  console.log(value))
+    }
+
+    return (
+        <div>
+            <h1>Create user in database</h1>
+            <button onClick={signupUser} className='btn bg-green-400 border-2 border-black' >Create user</button>
+        </div>
+    )
+}
+
+export default ApiAutication
+
+
+---> sigup Authentication 
+import React, { useState } from 'react'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../firebase';
+
+
+const auth = getAuth(app)
+
+function Signup() {
+    const [email, setemail] = useState("")
+    const [password, setpassword] = useState("")
+
+    const createuser = () => {
+        createUserWithEmailAndPassword(auth, email, password).then((value) =>
+            alert("Success")
+        );
+    };
+    return (
+        <div className='signup-page'>
+            <label>Email</label>
+            <input onChange={(e) => setemail(e.target.value)} value={email} type="email" required placeholder='enter your Email here' />
+            <label>Password</label>
+            <input onChange={(e) => setpassword(e.target.value)} value={password} type="password" required placeholder='enter your password  here' />
+            <button onClick={createuser}>Signup</button>
+        </div>
+    )
+}
+
+export default Signup
+
+
+
+
+
+
